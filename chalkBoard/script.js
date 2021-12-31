@@ -5,6 +5,8 @@
 //a program 
 //list of variables 
 const names = 'hazem_ali_ahmed_salma_tarek_fawzi_ali_'
+console.log(names[0].toUpperCase() + names.slice(1, "_"))
+console.log(names.split(2))
 // The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
 
 // THIS TEST DATA (pasted to textarea)
