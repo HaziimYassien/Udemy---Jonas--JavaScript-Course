@@ -1,0 +1,23 @@
+{
+  "name": "Udemy-Jonas-JavaScript-Course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaziimYassien/Udemy---Jonas-JavaScript-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaziimYassien/Udemy---Jonas-JavaScript-Course/issues"
+  },
+  "homepage": "https://github.com/HaziimYassien/Udemy---Jonas-JavaScript-Course#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
