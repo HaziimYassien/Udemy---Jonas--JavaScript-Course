@@ -93,6 +93,59 @@ prayer()
 
 // // 131. functions accepting callback functions 
 //so let's write a function that replaces words in a sentance : 
-const oneWord = function(str){
-  e
+const oneWord = function(str) {
+  return str.replace(/ /g/*this will choose all the spaces i the string*/, '').toUpperCase()
 }
+//let's create a second function 
+//this function will transform the first word of the string to upper case 
+const upperFirstWord = function(str) {
+  //dividing the input to first and others
+  const [first, ...otherWords] = str.split(' ')
+  //returning the two seperated lines and joining them together
+  return [first.toUpperCase(), ...otherWords].join(' ')
+}
+
+console.log(upperFirstWord('hazem magdy el sayed yassien'))
+console.log(upperFirstWord('hazem'))
+//so those two functions 1.oneWord and 2.upperFirstWord are the two functions that we will add to another function
+
+//now let's make a higher order function which will take the two function from above which are 1.oneWord and 2.upperFirstWord
+const transformer = function(str, fn/*this function will a second function as an argument */){
+  //so this the original text 
+  console.log(`original string: ${str}`)
+  //and this is the one that will happen after the transfer 
+  //so it all depends on what we will define the fn like which function will we choose 
+  console.log(`transformed string: ${fn(str)}`)
+}
+
+//so let's define this fn as oneWord
+//and while executing we will only pass in the function value not the function itself like this :
+transformer('javaScript is awesome', oneWord)
+transformer('JavaScript is awesome', upperFirstWord)
+
+//let's create another simple function from scratsh
+const printHello = function(){
+  console.log('HELOOOWWWW')
+}
+document.querySelector('#btn').addEventListener('click', printHello)
+
+//now you can pass in written function into built in function like forEach() so for example: 
+['Hazem', 'Magdy', 'El Syaed', "Yassien"].forEach(printHello)
+
+//there's something called abstraction which is baisclly means dividing the code into multiple sections so that eveyr section only focuses on what matters to him }
+
+
+// //132. functions creatin functions 
+//so this is a function that's inside there's another function that requires input which is name 
+const greet = (greeting) => {
+  return (name) => {
+    console.log(`${greeting} ${name}`)
+  }
+}
+
+const greeterHey = greet('hey')
+greeterHey('hazem')
+//so this works because greeterHey is now the actual function  
+
+// you can also do it all in one step like this 
+greet('hey there')('hazem')
