@@ -73,11 +73,10 @@ createBooking('LH123', undefined, 1000);
 }
 
 //130. first-class and higher-order functions : 
-//javascript treats functions as values 
+//javascript treats functions as values so we can store them in variables 
 //so for example : 
 //this is a function :
 const add = (a, b) => a + b;
-
 //higher order functions area functions that receive other function as an argument and returns a totally new function 
 //so for example : 
 const sujood = (bodyPart) => { console.log(`${bodyPart} is making sujood`) }
@@ -145,9 +144,9 @@ const greet = (greeting) => {
 
 const greeterHey = greet('hey')
 greeterHey('hazem')
-    //so this works because greeterHey is now the actual function  
+    //so this works because greeterHey is now the actual function
 
-// you can also do it all in one step like this 
+// you can also do it all in one step like this
 greet('hey there')('hazem');
 
 // 133. the call and apply methods 
@@ -197,3 +196,23 @@ const calling = {
     ${this.religion} and he prays ${this.prayerTimes} he is ${age} years old and ${shortBrief}`)
     }
 }
+
+//the bind method : 
+//the bind method allows to set the this keyword for any function call
+//it creates a new function where the this keyword is always set to the mentioned location
+//so for example :
+book.bind(eurowings) //now this is not the book function this is a totally new function 
+    //we can even give her a new name 
+const bookEW = book.bind(eurowings)
+    //so now this function has this keyword set to eurowings
+
+//let's create a new function for every airline: 
+const bookMSR = book.bind(EgyptAir)
+const bookLFH = book.bind(luftHansa)
+const bookLX = book.bind(swiss)
+    //so now we can call the function like this :
+bookMSR(123156, 'Hazem Yassien')
+bookLFH(123156, 'Hazem Yassien')
+bookLX(123156, 'Hazem Yassien')
+
+//let's create a new function for every flight:
