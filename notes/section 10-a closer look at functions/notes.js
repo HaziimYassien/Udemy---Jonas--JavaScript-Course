@@ -1,4 +1,4 @@
-// // 128. default parameters : 
+// /// 128. default parameters : 
 //I have no idea what is default parameters meaning but this the old way of setting default parameters
 
 const bookings = [];
@@ -72,7 +72,8 @@ createBooking('LH123', 5);
 createBooking('LH123', undefined, 1000);
 }
 
-//130. first-class and higher-order functions : 
+
+// //130. first-class and higher-order functions : 
 //javascript treats functions as values so we can store them in variables 
 //so for example : 
 //this is a function :
@@ -89,6 +90,7 @@ const sujood = (bodyPart) => { console.log(`${bodyPart} is making sujood`) }
 const prayer = (sujood)
 sujood(back)
 prayer()
+
 
 // // 131. functions accepting callback functions 
 //so let's write a function that replaces words in a sentance : 
@@ -216,3 +218,27 @@ bookLFH(123156, 'Hazem Yassien')
 bookLX(123156, 'Hazem Yassien')
 
 //let's create a new function for every flight:
+
+
+// //136. IIFE Immediatly invoked function expression:
+
+//they are function that are defined only once and they must be included inside a parenthesis
+(function() {
+    console.log("this is an IIFE it will run only once")
+})()(() => console.log("IIFE is a function that runs only once"))
+
+//if we defined a variable inside and IIFE function scope
+//it can't be used outside this function's scope
+(function() {
+    const insideIIFE = "inside IIFE"
+})
+console.log(insideIIFE) //will return can't be found 
+
+//so as a refresher
+//
+{
+    const constDefined = "constDefined"
+    var varDefined = "varDefined"
+}
+console.log(constDefined) //will return can't be found because const focuses on scooping
+console.log(varDefined) //will return varDefined cuz var doesn't give a single dime about the scope
