@@ -242,3 +242,73 @@ console.log(insideIIFE) //will return can't be found
 }
 console.log(constDefined) //will return can't be found because const focuses on scooping
 console.log(varDefined) //will return varDefined cuz var doesn't give a single dime about the scope
+
+
+// //137. closures
+
+//a closure is a function that has access to the parent scope, even after the parent function has closed
+//like a family member who didn't lose connection to his family and their variables
+
+//for example:
+
+const myName = "hazem";
+
+function printName() {
+    console.log(myName);
+}
+
+printName() //result will be hazem
+
+//so every function has access to the parent scope
+//and ins this function the parent scope is the main scope which has myName variable
+
+//another example:
+var addTo = function(passed) {
+    var inner = 2;
+    return passed + inner;
+}
+console.log(addTo(3)); //5
+
+//so in here you can define a variable called inner and it will be accessible in the function
+//so in this case the inner variable is 2
+
+var passed = 2;
+var addTo = function() {
+    var inner = 3;
+    return passed + inner;
+}
+console.log(addTo()); //5
+
+//another example :
+
+//closure function
+function makeAdder(a) {
+    return function(b) {
+        return a + b;
+    }
+}
+//this is a simple example of a closure function
+
+// 138. more closure examples
+
+let f;
+
+const g = function() {
+    const a = 23;
+    //now I'm going to reassignthe f value to a function value 
+    f = function() {
+        console.log(a * 2)
+    }
+}
+
+//timer example :
+
+const boardPassengers = function(n /*number of passengers*/ , wait /*wait time*/ ) {
+    const perGroup /*because boarding usually happens in groups*/ = n / 3 /*3 people per group*/ ;
+    //now I'm going to set a timer to call the function after wait time
+    setTimeout(function() {
+        console.log(`${perGroup} passengers have boarded`);
+    }, wait);
+    //then we will log this : 
+    console.log(`${perGroup} groups of 3 people will board in ${wait} seconds`));
+}

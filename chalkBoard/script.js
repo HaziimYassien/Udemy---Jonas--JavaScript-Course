@@ -1,44 +1,24 @@
-// //137. closures
+///////////////////////////////////////
+// Coding Challenge #2
 
-//a closure is a function that has access to the parent scope, even after the parent function has closed
-//like a family member who didn't lose connection to his family and their variables
+/* 
+This is more of a thinking challenge than a coding challenge 🤓
 
-//for example:
+Take the IIFE below and at the end of the function, attach an event listener that changes the color of the selected h1 element ('header') to blue, each time the BODY element is clicked. Do NOT select the h1 element again!
 
-const myName = "hazem";
+And now explain to YOURSELF (or someone around you) WHY this worked! Take all the time you need. Think about WHEN exactly the callback function is executed, and what that means for the variables involved in this example.
 
-function printName() {
-    console.log(myName);
-}
+GOOD LUCK 😀
+*/
 
-printName() //result will be hazem
+/*
+ */
 
-//so every function has access to the parent scope
-//and ins this function the parent scope is the main scope which has myName variable
 
-//another example:
-var addTo = function(passed) {
-    var inner = 2;
-    return passed + inner;
-}
-console.log(addTo(3)); //5
-
-//so in here you can define a variable called inner and it will be accessible in the function
-//so in this case the inner variable is 2
-
-var passed = 2;
-var addTo = function() {
-    var inner = 3;
-    return passed + inner;
-}
-console.log(addTo()); //5
-
-//another example :
-
-//closure function
-function makeAdder(a) {
-    return function(b) {
-        return a + b;
-    }
-}
-//this is a simple example of a closure function
+(function() {
+    const header = document.querySelector('h1')
+    header.addEventListener('click', function() {
+        header.style.color = 'blue'
+    })
+    header.style.color = 'red'
+})()
