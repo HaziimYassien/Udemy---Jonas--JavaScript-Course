@@ -1,0 +1,9 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.againBtn{
+    width: 100px;
+    height: 50px;
+}
