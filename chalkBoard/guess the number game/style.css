@@ -3,7 +3,20 @@ body {
     color: white;
 }
 
+
+.container1{
+  display: grid;
+  grid-template-areas: 
+    "topbar topbar topbar"
+     "center center center"
+     "bottombar bottombar bottombar"
+  grid-template-columns: 1fr 1fr 3fr;
+}
 .againBtn{
     width: 100px;
     height: 50px;
+  grid-area: topbar;
+}
+.startGuessing{
+  grid-area: bottombar;
 }
