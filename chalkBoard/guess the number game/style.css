@@ -6,6 +6,7 @@
     box-sizing: inherit;
 }
 
+<<<<<<< HEAD
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -116,4 +117,22 @@ h1 {
 
 .label-score {
     margin-bottom: 2rem;
+=======
+
+.container1{
+  display: grid;
+  grid-template-areas: 
+    "topbar topbar topbar"
+     "center center center"
+     "bottombar bottombar bottombar"
+  grid-template-columns: 1fr 1fr 3fr;
+}
+.againBtn{
+    width: 100px;
+    height: 50px;
+  grid-area: topbar;
+}
+.startGuessing{
+  grid-area: bottombar;
+>>>>>>> 3c7381ef8e09c313c949e0ac2a679ee2890a7fd9
 }
